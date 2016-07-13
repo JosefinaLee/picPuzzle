@@ -71,7 +71,6 @@
 			aImg[index].style.left = aImg[index].unfoldPos.left + "px";
 			aImg[index].style.top = aImg[index].unfoldPos.top + "px";
 			setStyle3d(aImg[index], 'transform', "rotate("+(Math.random()*40-20)+"deg)");
-			// aImg[index].style.WebkitTransform = "rotate("+(Math.random()*40-20)+"deg)";
 			aImg[index].addEventListener("click", clickHandler, false);
 		}, 80);
 		function clickHandler(){
