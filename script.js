@@ -15,7 +15,6 @@
 		bigImageTop = (oContainer.offsetHeight - BIG_IMG_HEIGHT)/2,
 		iColGap = (oContainer.offsetWidth - COL*THUMB_IMG_WIDTH)/(COL+1),
 		iRowGap = (oContainer.offsetHeight - ROW*THUMB_IMG_HEIGHT)/(ROW+1);
-	console.log(bigImageLeft);	
 	for(var i=0; i<NUM; i++){
 		var oBigImg = new Image();
 		oBigImg.src = "img/"+(i+1)+".jpg";
@@ -25,7 +24,6 @@
 				loadSuccess();
 			}
 		};
-
 		var oThumbImg = new Image();
 		oThumbImg.src = "img/thumbs/"+(i+1)+".jpg";
 		oThumbImg.onload = function(){
@@ -35,7 +33,6 @@
 			}
 		};
 	}
-	
 	function loadSuccess(){
 
 		for(var i=0; i<ROW; i++){
@@ -77,7 +74,6 @@
 			// aImg[index].style.WebkitTransform = "rotate("+(Math.random()*40-20)+"deg)";
 			aImg[index].addEventListener("click", clickHandler, false);
 		}, 80);
-
 		function clickHandler(){
 			if(bFold){ //unfold
 				for(var i=0; i<aImg.length; i++){
