@@ -115,15 +115,21 @@
 						}
 						iNow++;
 					}
-					var index2 = 0;
+					var arr = [];
+					for(var i=0; i<aImg.length; i++){
+						arr.push(i);
+					}
+					arr.sort(function(){
+						return (Math.random() - 0.5); //Sort random
+					});
 					var timer = setInterval(function(){
-						if(index2 == NUM-1){
+						var item = arr.pop();
+						if(arr.length == 0){
 							clearInterval(timer);
 						}
-						var oSpan = aImg[index2].getElementsByTagName("span")[0];
-						oSpan.style.background = "url(img/"+iNow+".jpg)"+(-aImg[index2].matrix.col*THUMB_IMG_WIDTH)+"px "+(-aImg[index2].matrix.row*THUMB_IMG_HEIGHT)+"px";
-						index2++;
-					}, 50);
+						var oSpan = aImg[item].getElementsByTagName("span")[0];
+						oSpan.style.background = "url(img/"+iNow+".jpg)"+(-aImg[item].matrix.col*THUMB_IMG_WIDTH)+"px "+(-aImg[item].matrix.row*THUMB_IMG_HEIGHT)+"px";
+					}, 25);
 				}
 			} 
 			bFold = !bFold;
